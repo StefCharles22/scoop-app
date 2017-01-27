@@ -1,0 +1,52 @@
+<h2>top news below</h2>
+<hr>
+<!--  news search-->
+
+  <%= form_tag("/news", method: "post") do %>
+  <%= label_tag(:source, "Search for a source:") %>
+  <%= text_field_tag(:source) %>
+  <%= submit_tag("Search", class: "btn") %>
+  <% end %>
+  <hr>
+
+<%= @source %>
+
+
+
+
+<div class="container">
+  <div class="row main">
+    <!--  signed in-->
+    <% if (@response_arr) %>
+
+
+
+    <% @response_arr.each do |response| %>
+      <h4> FROM: <%= response["source"] %> </h4>
+
+      <%= response['articles'][0]["title"] %>
+      <br>
+      <% @image = response['articles'][0]["urlToImage"] %>
+      <br>
+
+      <%= image_tag(@image)%>
+
+
+    <% end %>
+
+
+    <hr>
+    <% else %>
+
+    <!--  default-->
+      <% @response['articles'].each do |response| %>
+        <%= response["title"] %>
+        <%= response["description"] %></p>
+        <% @image = response["urlToImage"] %>
+        <%= image_tag(@image)%>
+
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

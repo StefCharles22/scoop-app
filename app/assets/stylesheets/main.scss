@@ -1,0 +1,33 @@
+
+body {
+
+
+
+  header {
+
+      position: fixed;
+      width:100%;
+      z-index: 1;
+      height: 0%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      .mdl-layout-title {
+        // color:
+      }
+
+  }
+
+  img {
+    width: 200px;
+    height: auto;
+  }
+
+  .logos img {
+    width: 80px;
+    height: auto;
+  }
+
+
+
+} //end of body

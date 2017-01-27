@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row main">
+
+    <h3>This is the Users Show page.</h3>
+
+    <hr>
+
+    <h4>User's info: </h4>
+
+    <%= @user.id %>.
+    <%= @user.email %>
+    <%= image_tag @user.avatar.url(:medium) %>
+    <br>
+    <hr>
+
+    <!--  has to match the nickname devise generate for you-->
+    <%= link_to ("Edit account"), edit_user_registration_path %>
+    <br>
+    <hr>
+    <!--  links to edit_user page where delete action is located-->
+    <%= link_to ("Delete account"), edit_user_registration_path %>
+    <br>
+    <hr>
+
+    <!--  href links triggers the action to create a new favorite source news-->
+    <%= link_to ("Choose Favorites"), choose_favorites_nickname_path %>
+  </div>
+</div>

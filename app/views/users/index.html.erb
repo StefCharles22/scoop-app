@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row main">
+
+    <h3>This is the Users Show page.</h3>
+
+    <% @all_users.each do |user| %>
+      <%= user.id %>.
+      <%= user.email %>
+    <% end %>
+  </div>
+</div>

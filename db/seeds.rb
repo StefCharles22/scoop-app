@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Favorite.create([
+  {source: "cnn", user_id: 1},
+  {source: "buzzfeed", user_id: 1},
+  {source: "techcrunch", user_id: 2},
+  {source: "washingtonpost", user_id: 2},
+  {source: "msnbc", user_id: 3}
+])
