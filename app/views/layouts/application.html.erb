@@ -30,7 +30,6 @@
 
     <body>
 
-        <!-- clever Devise signup/login/logout links -->
       <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
           <div class="mdl-layout__header-row">
@@ -53,11 +52,11 @@
                 <a class="mdl-navigation__link"><%= link_to 'SUBSCRIBE',new_user_registration_path %></a>
                 <% end %>
               </nav>
-              
+
           </div> <!-- end of header row-->
         </header>
 
-            <div class="mdl-layout__drawer">
+        <div class="mdl-layout__drawer">
               <span class="mdl-layout-title"></span>
               <nav class="mdl-navigation">
                   <a class="mdl-navigation__link"><%= link_to 'MY NEWS', news_path %></a>
@@ -75,35 +74,38 @@
                   <hr>
               </nav>
             </div>
-           <!-- end of fixed header -->
+      </div>
+      <!-- end of fixed header -->
 
-           <!-- devise -->
-           <p class="notice"><%= notice %></p>
-           <p class="alert"><%= alert %></p>
+      <!-- devise -->
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
+      <div class="container">
+        <!-- begin yield -->
+        <%= yield %>
+        <!-- end yield -->
+      </div>
+
+
+
+       <footer>
+         <div class="footer" id="footer">
            <div class="container">
-             <%= yield %>
-           </div>
-
-
-
-           <footer>
-             <div class="footer" id="footer">
-               <div class="container">
-                 <div class="row">
-                   <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-xs-10 col-xs-offset-2 ">
-                     <center>
-                       <ul class="social">
-                         <li> <a href="https://www.facebook.com/BreakingNews/"> <i class=" fa fa-facebook">   </i> </a> </li>
-                         <li> <a href="https://twitter.com/breakingnews?lang=en"> <i class="fa fa-twitter">   </i> </a> </li>
-                         <li> <a href="https://plus.google.com/+BreakingNews"> <i class="fa fa-google-plus">   </i> </a> </li>
-                         <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                       </ul>
-                     </div>
-                   </div> <!--/.row-->
-                 </div>   <!--/.container-->
-               </div> <!-- end of class footer -->
-             </footer>
+             <div class="row">
+               <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-xs-10 col-xs-offset-2 ">
+                 <center>
+                   <ul class="social">
+                     <li> <a href="https://www.facebook.com/BreakingNews/"> <i class=" fa fa-facebook">   </i> </a> </li>
+                     <li> <a href="https://twitter.com/breakingnews?lang=en"> <i class="fa fa-twitter">   </i> </a> </li>
+                     <li> <a href="https://plus.google.com/+BreakingNews"> <i class="fa fa-google-plus">   </i> </a> </li>
+                     <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                   </ul>
+                 </div>
+               </div> <!--/.row-->
+             </div>   <!--/.container-->
+           </div> <!-- end of class footer -->
+         </footer>
 
     </body>
 

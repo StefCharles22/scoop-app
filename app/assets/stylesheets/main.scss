@@ -4,14 +4,18 @@ body {
     background-color: #ECECEA;
 
     h2 h3 h4 h5  h6 {
-      font-family: 'Libre Baskerville', serif;
+      font-family: 'Playfair Display', serif;
       font-weight: bold;
     }
 
     h1 , h2 {
-      font-family: 'Libre Baskerville', serif;
+      font-family: 'Playfair Display', serif;
       font-weight: bold;
       font-size: 36px;
+    }
+
+    h5, h6 {
+      font-family: 'Playfair Display', serif;
     }
 
     // search result font style
@@ -23,7 +27,7 @@ body {
     }
 
     p {
-      font-family: 'Playfair Display', serif;
+      font-family: 'Libre Baskerville', serif;
     }
 
   header {
@@ -92,7 +96,7 @@ body {
 
       // my news card style and padding
       .hackfix {
-        background-color: #C8C8C5;
+        background-color: white;
         border-radius: 5px;
       }
 
@@ -103,9 +107,10 @@ body {
 
        a {
         color: #D9853B;
-        font-family: 'Libre Baskerville', serif;
+        font-family: 'Playfair Display', serif;
         font-weight: bold;
-      }
+       }
+
 
       #chosen-faves img {
         width: 80px;
@@ -117,9 +122,9 @@ body {
     // user's favorite cards style
       .thumbnail {
         border-radius: 5px;
-        h4 {
+        h4  h5 {
           text-align: center;
-          font-family: 'Playfair Display', serif;
+          font-family: 'Libre Baskerville', serif;
           }
       }
 
@@ -179,7 +184,7 @@ body {
       // margin-left: 10px;
       text-align: center;
       font-size: 25px;
-      font-family:sans-serif;
+      font-family: 'Libre Baskerville', serif;
 
 
       img {
