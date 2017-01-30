@@ -75,6 +75,10 @@ body {
         background-color: 255, 255, 255, .15;
       }
 
+      .mdl-layout__container  {
+        height: 0px;
+      }
+
       // search box centering
       .search {
         text-align: center;
