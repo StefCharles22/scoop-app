@@ -7,10 +7,14 @@
     <!--  Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!-- Material Design Lite -->
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--  font paring link below-->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Playfair+Display" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -20,54 +24,87 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="../../assets/main.js" ></script>
+
   </head>
 
-  <body>
+    <body>
 
-      <!-- clever Devise signup/login/logout links -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-            <span class="mdl-layout-title">SCOOP</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <!-- clever Devise signup/login/logout links -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+              <span class="mdl-layout-title">SCOOP</span>
+              <hr>
+              <!-- Add spacer, to align navigation to the right -->
+              <div class="mdl-layout-spacer"></div>
 
-              <% if (user_signed_in?) %>
-
-              <a class="mdl-navigation__link"><%= link_to 'Sign Out',  { :action=>"destroy", :controller=>"devise/sessions" }, method: :delete  %></a>
-                <a class="mdl-navigation__link"><%= link_to 'HOME', news_path %></a>
-                <a class="mdl-navigation__link"><%= link_to 'Setting', edit_user_registration_path %></a>
+              <!-- Navigation. We hide it in small screens. -->
+              <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <% if (user_signed_in?) %>
+                <a class="mdl-navigation__link"><%= link_to 'MY NEWS', news_path%></a>
+                <hr>
+                <a class="mdl-navigation__link"><%= link_to 'SETTING',edit_user_registration_path %></a>
+                <a class="mdl-navigation__link"><%= link_to 'FAVORITES',choose_favorites_nickname_path %></a>
+                <a class="mdl-navigation__link"><%= link_to 'LOG OUT',  { :action=>"destroy", :controller=>"devise/sessions" }, method: :delete  %></a>
                 <% else %>
-                <a class="mdl-navigation__link"><%= link_to 'Log in', new_user_session_path %></a>
-                <a class="mdl-navigation__link"><%= link_to 'Sign Up', new_user_registration_path %></a>
+                <a class="mdl-navigation__link"><%= link_to 'LOG IN',new_user_session_path %></a>
+                <a class="mdl-navigation__link"><%= link_to 'SUBSCRIBE',new_user_registration_path %></a>
                 <% end %>
-            </nav>
-        </div> <!-- end of header row-->
-      </header>
+              </nav>
+              
+          </div> <!-- end of header row-->
+        </header>
 
-          <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">SCOOP</span>
-            <nav class="mdl-navigation">
-              <a class="mdl-navigation__link"><%= link_to 'Sign Out',  { :action=>"destroy", :controller=>"devise/sessions" }, method: :delete  %></a>
-                <a class="mdl-navigation__link"><%= link_to 'HOME', news_path %></a>
-                <a class="mdl-navigation__link"><%= link_to 'Setting', edit_user_registration_path %></a>
-                <% else %>
-                <a class="mdl-navigation__link"><%= link_to 'Log in', new_user_session_path %></a>
-                <a class="mdl-navigation__link"><%= link_to 'Sign Up', new_user_registration_path %></a>
-            </nav>
-          </div>
-         <!-- end of fixed header -->
+            <div class="mdl-layout__drawer">
+              <span class="mdl-layout-title"></span>
+              <nav class="mdl-navigation">
+                  <a class="mdl-navigation__link"><%= link_to 'MY NEWS', news_path %></a>
+                  <hr>
+                  <a class="mdl-navigation__link"><%= link_to 'SETTINGS', edit_user_registration_path %></a>
+                  <hr>
+                  <a class="mdl-navigation__link"><%= link_to 'FAVORITES', choose_favorites_nickname_path %></a>
+                  <hr>
+                  <a class="mdl-navigation__link"><%= link_to 'LOG OUT',  { :action=>"destroy", :controller=>"devise/sessions" }, method: :delete  %></a>
+                  <hr>
+                  <% else %>
+                  <a class="mdl-navigation__link"><%= link_to 'LOG IN', new_user_session_path %></a>
+                  <hr>
+                  <a class="mdl-navigation__link"><%= link_to 'SUBSCRIBE', new_user_registration_path %></a>
+                  <hr>
+              </nav>
+            </div>
+           <!-- end of fixed header -->
 
-         <!-- devise -->
-         <p class="notice"><%= notice %></p>
-         <p class="alert"><%= alert %></p>
+           <!-- devise -->
+           <p class="notice"><%= notice %></p>
+           <p class="alert"><%= alert %></p>
 
-        <%= yield %>
+           <div class="container">
+             <%= yield %>
+           </div>
 
 
-    </div> <!-- end of fixed header -->
-  </body>
+
+           <footer>
+             <div class="footer" id="footer">
+               <div class="container">
+                 <div class="row">
+                   <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-4 col-xs-10 col-xs-offset-2 ">
+                     <center>
+                       <ul class="social">
+                         <li> <a href="https://www.facebook.com/BreakingNews/"> <i class=" fa fa-facebook">   </i> </a> </li>
+                         <li> <a href="https://twitter.com/breakingnews?lang=en"> <i class="fa fa-twitter">   </i> </a> </li>
+                         <li> <a href="https://plus.google.com/+BreakingNews"> <i class="fa fa-google-plus">   </i> </a> </li>
+                         <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                       </ul>
+                     </div>
+                   </div> <!--/.row-->
+                 </div>   <!--/.container-->
+               </div> <!-- end of class footer -->
+             </footer>
+
+    </body>
+
 </html>

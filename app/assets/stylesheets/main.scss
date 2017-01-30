@@ -1,7 +1,30 @@
 
 body {
+    width:auto;
+    background-color: #ECECEA;
 
+    h2 h3 h4 h5  h6 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+    }
 
+    h1 , h2 {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    // search result font style
+    .text-warning {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-family: 'Playfair Display', serif;
+    }
 
   header {
 
@@ -12,22 +35,230 @@ body {
       overflow: hidden;
       top: 0;
       left: 0;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+
+
+
       .mdl-layout-title {
-        // color:
+        color: #74AFAD;
+        font-family: 'Libre Baskerville', serif;
+        font-weight: bold;
+        font-size: 30px;
       }
 
-  }
+      .mdl-layout__header-row {
+        background-color: #404040;
+      }
+      nav .middle-navigation a {
+        color : #D9853B;
+        font-family: 'Libre Baskerville', serif;
+        font-weight: bold;
+      }
 
-  img {
-    width: 200px;
-    height: auto;
-  }
+      .mdl-layout__drawer {
+        background-color: #ECECEA;
+      }
 
-  .logos img {
-    width: 80px;
-    height: auto;
-  }
+  } //end of header
 
+      // hamburger color
+      div .mdl-layout__header .mdl-layout__drawer-button {
+      background-color: #D9853B;
+      }
+
+       .mdl-navigation {
+        background-color: 255, 255, 255, .15;
+      }
+
+      // search box centering
+      .search {
+        text-align: center;
+      }
+
+      .col-md-4 img {
+        width: auto;
+        height: 200px;
+        object-fit: cover;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      // fixing column up and down in logged in view for images and text in grid
+      .hotfix {
+        transform: translateY(-20px);
+        // background-color: white;
+      }
+
+      // my news card style and padding
+      .hackfix {
+        background-color: #C8C8C5;
+        border-radius: 5px;
+      }
+
+      .logos img {
+        width: 80px;
+        height: auto;
+      }
+
+       a {
+        color: #D9853B;
+        font-family: 'Libre Baskerville', serif;
+        font-weight: bold;
+      }
+
+      #chosen-faves img {
+        width: 80px;
+        height: auto;
+      }
+
+
+
+    // user's favorite cards style
+      .thumbnail {
+        border-radius: 5px;
+        h4 {
+          text-align: center;
+          font-family: 'Playfair Display', serif;
+          }
+      }
+
+      // form styling for registration
+      #logform {
+        background-color: #3f4652; //dark grey-blue
+        color: #FFF;
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-bottom: 100px;
+        padding-bottom: 30px;
+        padding-right: 60px;
+        input {
+          color: black;
+        }
+        h4 {
+          font-size: 20px;
+          color: #D9853B;
+        }
+      }  //end of logform
+
+    // sign up button styling
+      #submit {
+        padding-top: 8px;
+        padding-bottom: 15px;
+        color: #D9853B; //orange color
+      }
+
+
+    li {
+      text-decoration: none;
+      list-style: none;
+    }
+
+    div.card {
+      opacity: 80;
+      border-radius: 5px;
+    }
+
+    div.card > li:hover {
+    }
+
+      //  w3 school box shadow
+      .card .thumbnail {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin: 2%;
+      margin-top: 50px;
+      }
+
+      // styling logo and text w3 school
+    .thumbnail li {
+      margin: 0 10px;
+      border: none;
+      color: red;
+      padding: 10px;
+      // margin-left: 10px;
+      text-align: center;
+      font-size: 25px;
+      font-family:sans-serif;
+
+
+      img {
+        border-width:5px;
+        border-style:outset;
+        border-radius: 4px;
+        padding: 5px;
+        width: 150px;
+        }
+
+      img:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+    } //end of thumbnail
+
+
+    // edit favorite
+    .panel-default {
+      background-color: #3f4652;
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover
+      }
+      .row {
+        color: #D9853B;
+      }
+      .row a:hover {
+        color: white;
+      }
+    }
+
+    //footer style from bootsnip
+    .footer {
+      width: 100%;
+      height: auto;
+      background-color: #404040;
+      position: absolute;
+      ;
+       .footer img {
+         max-width: 100%;
+       }
+         .footer ul {
+    	font-size: 13px;
+    	list-style-type: none;
+    	margin-left: 0;
+    	padding-left: 0;
+    	margin-top: 15px;
+    	color: #7F8C8D;
+     }
+      .social li {
+      background: none repeat scroll 0 0 #B5B5B5;
+      border: 2px solid #B5B5B5;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%;
+      float: left;
+      height: 36px;
+      line-height: 36px;
+      margin: 0 8px 0 0;
+      padding: 0;
+      text-align: center;
+      width: 36px;
+      transition: all 0.5s ease 0s;
+      -moz-transition: all 0.5s ease 0s;
+      -webkit-transition: all 0.5s ease 0s;
+      -ms-transition: all 0.5s ease 0s;
+      -o-transition: all 0.5s ease 0s
+      }
+      .social li:hover {
+    	transform: scale(1.15) rotate(360deg);
+    	-webkit-transform: scale(1.1) rotate(360deg);
+    	-moz-transform: scale(1.1) rotate(360deg);
+    	-ms-transform: scale(1.1) rotate(360deg);
+    	-o-transform: scale(1.1) rotate(360deg);
+    }
+  } //end of footer
 
 
 } //end of body

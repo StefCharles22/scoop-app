@@ -1,31 +1,33 @@
 <div class="container">
-  <div class="row main">
-
-
+  <div class="row">
 
     <!-- This is the currently signed in user's ID: <%= @user_id %>
-
     <p>
-      Here we will display boxes, one for each source!
+    Here we will display boxes, one for each source!
     </p>
-
     <p>
-      If the user clicks a box, it will create a new row in the Favorite table, using the name of the source ("cnn") and the user's id (current_user.id)
+    If the user clicks a box, it will create a new row in the Favorite table, using the name of the source ("cnn") and the user's id (current_user.id)
     </p> -->
 
     <!-- display a list of all user faves -->
+    <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-1 card">
+      <div class="thumbnail">
+        <h4>User's favorites:</h4>
+        <hr>
+        <ul id="chosen-faves">
+          <% @user_favorites.each do |favorite| %>
+
+          <!--  for th delete to work the action has to grab the user_id: and source: from controller -->
+          <li class="removable">
+            <% @favorites_pick = favorite.source%>
+            <%= link_to image_tag(@favorites_pick), {action: :remove_favorite, controller: :users, user_id: @user_id, source: @favorites_pick }, remote: true %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
 
 
-    <h4>User's favorites:</h4>
-    <% @user_favorites.each do |favorite| %>
-
-      <!--  for th delete to work the action has to grab the user_id: and source: from controller -->
-      <%= link_to (favorite.source), {action: :remove_favorite, controller: :users, user_id: @user_id, source: favorite.source} , remote: true %>
-
-      <br>
-    <% end %>
-
-    <hr>
 
     <!-- <p>
       UJS link_to: create a new row in the Favorite table
@@ -33,21 +35,38 @@
 
 
     <div class="logos">
-      <%= link_to image_tag("http://i.newsapi.org/cnn-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "cnn" }, remote: true %>
-      <br><br>
-      <%= link_to image_tag("http://i.newsapi.org/cnbc-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "cnbc" }, remote: true %>
-      <br><br>
-      <%= link_to image_tag("http://i.newsapi.org/bbc-news-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "bbc-news"}, remote: true %>
-      <br><br>
-      <%= link_to image_tag("http://i.newsapi.org/buzzfeed-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "buzzfeed"}, remote: true %>
-      <br><br>
-      <%= link_to image_tag("http://i.newsapi.org/techradar-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "techradar" }, remote: true %>
-      <br><br>
-      <%= link_to image_tag("http://i.newsapi.org/techcrunch-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "techcrunch" }, remote: true %>
-      <br><br>
-      <%= link_to image_tag("http://i.newsapi.org/bloomberg-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "bloomberg" }, remote: true %>
-      <br><br>
-      <%= link_to image_tag("http://i.newsapi.org/national-geographic-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "national-geographic" }, remote: true %>
-    </div>
-  </div>
+
+
+      <div class="col-xs-12 col-sm-12 col-md-4 col-md-offset-1 card">
+        <div class="thumbnail">
+          <h4> News Source :</h4>
+          <hr>
+          <ul id="not-chosen-faves">
+            <li class="cnn">
+              <%= link_to image_tag("http://i.newsapi.org/cnn-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "cnn"}, remote: true %>
+            </li>
+            <br>
+            <li class="cnbc"><%= link_to image_tag("http://i.newsapi.org/cnbc-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "cnbc" }, remote: true %></li>
+            <br>
+
+            <li class="buzzfeed"><%= link_to image_tag("http://i.newsapi.org/buzzfeed-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "buzzfeed"}, remote: true %></li>
+              <br>
+
+              <li class="techradar"><%= link_to image_tag("http://i.newsapi.org/techradar-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "techradar" }, remote: true %></li>
+              <br>
+              <li class="techcrunch"><%= link_to image_tag("http://i.newsapi.org/techcrunch-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "techcrunch" }, remote: true %></li>
+              <br>
+              <li class="bloomberg"><%= link_to image_tag("http://i.newsapi.org/bloomberg-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "bloomberg" }, remote: true %></li>
+              <br>
+              <li class="national-geographic"><%= link_to image_tag("http://i.newsapi.org/national-geographic-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "national-geographic" }, remote: true %></li>
+
+              <li class="time"><%= link_to image_tag("http://i.newsapi.org/time-s.png"), {action: :add_favorite, controller: :users, user_id: @user_id, source: "Time" }, remote: true %></li>
+
+
+
+          </div> <!-- end of thumbnail -->
+        </div> <!-- end of col small -->
+
+      </div>  <!-- end of logo-->
+  </div>  <!-- end of row -->
 </div>

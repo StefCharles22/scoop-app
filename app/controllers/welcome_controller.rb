@@ -10,11 +10,11 @@ class WelcomeController < ApplicationController
 
         #Do you want the user to search? or have drop down of sources?
         #)
-
-
         if (!current_user)
           puts 'NO ONE'
         end
+
+
 
 
     # puts "RESPONSE", @response.inspect
@@ -60,11 +60,13 @@ class WelcomeController < ApplicationController
 
   def news
 
-     @source = params["source"]
+   @source = params["source"]
+
+
 
      @response = HTTParty.get("http://www.newsapi.org/v1/articles?source=#{@source}&apiKey=#{ENV['NEWS_API_KEY']}")
      puts "RESPONSE", @response.inspect
 
-   end
+  end
 
 end

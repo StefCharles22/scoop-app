@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   def index
     # array of all users:
     @all_users = User.all
+
+
   end
 
   before_action :authenticate_user!
@@ -17,19 +19,25 @@ class UsersController < ApplicationController
     @user_id = current_user.id
     @user = User.find(@user_id)
     @user_favorites = @user.favorites
+
   end
 
   def add_favorite
-      puts "Triggered add_favorite action"
-      # if @new_favorite = User.favorite
+    puts "Triggered add_favorite action"
+    # if @new_favorite = User.favorite
 
+    @news_source = params[:source]
 
-      @new_favorite = Favorite.create(
-        user_id: params[:user_id],
-        source: params[:source])
+    @new_favorite = Favorite.create(
+      user_id: params[:user_id],
+      source: params[:source]
+    )
   end
 
-  
+
+
+
+
 
  #CHANGE THIS TO DELETE
   def remove_favorite
@@ -44,13 +52,5 @@ class UsersController < ApplicationController
 
     puts @delete_favorite
   end
-
-
-
-
-
-
-
-
 
 end
