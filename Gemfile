@@ -5,6 +5,7 @@ gem 'awesome_print'
 gem 'devise'
 gem 'paperclip'
 gem "httparty"
+gem 'bootstrap-datepicker-rails'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
