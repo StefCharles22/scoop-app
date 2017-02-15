@@ -1,21 +1,15 @@
-<br><br>
-<div class="col-xs-12 col-md-12">
-  <div class="panel panel-default">
-    <div class="panel-body">
-          <center>
-            <div class="row">
-              <%= @user.email %>
-            </div>
-          <div class="row">
-            <%= image_tag @user.avatar.url(:medium), :class => "img-responsive" %>
-          </div>
-        </center>
-    </div>
 
-
+<div id="settings" class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-body">
       <center>
+
+        <div class="row">
+          <%= image_tag @user.avatar.url(:medium), :class => "img-responsive" %>
+        </div>
+        <hr>
+
+
         <div class="row">
 
           <!--  has to match the nickname devise generate for you-->
@@ -32,7 +26,8 @@
           <!--  href links triggers the action to create a new favorite source news-->
           <%= link_to ("Choose Favorites"), choose_favorites_nickname_path %>
         </div>
-    </center>
+
+      </center>
     </div>
   </div>
 </div>
