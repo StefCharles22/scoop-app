@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# README
 
-Things you may want to cover:
+Github [Link](https://github.com/StefCharles22/scoop-app)
 
-* Ruby version
+Heroku [Link](https://scoop-app.herokuapp.com)
 
-* System dependencies
+Dummy Heroku login :demoapp  
+             Password: password
 
-* Configuration
+About this app
 
-* Database creation
+The Scoop web app is a news source site where the user can read the current breaking news, customize their newsfeed and have access to headlines, article title and image associated with feed.
 
-* Database initialization
+Technology used:
+  Backend
+    - Ruby on Rails
+    - SQlite
+    - Devise
+    - Paperclip
+    - News APi
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  Frontend
+    - HTML
+    - SCSS
+    - Bootstrap
+    
