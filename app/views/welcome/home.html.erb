@@ -46,35 +46,29 @@
       </div> <!-- end of row -->
 
 
+      <hr>
+      <% else %>
 
+      <!--  default grid-->
 
-
-
-
-
-    <hr>
-    <% else %>
-
-    <!--  default grid-->
-
-    <!-- not subscribed view -->
-    <div class="row">
-      <div class="col-sm-12 col-md-8 col-md-offset-2">
-        <% @response['articles'].each do |response| %>
-        <div class="thumbnail">
-          <div class="row">
-            <div class="col-md-4">
-              <% @image = response["urlToImage"] %>
-              <%= image_tag(@image, :class => "img-responsive") %>
-            </div>
-            <div class="col-md-8">
-              <h5><%= response["title"] %></h5>
-              <p><%= response["description"] %></p>
-            </div>
-          </div> <!-- end of row -->
-        </div> <!-- thumbnail-->
-        <% end %>
+      <!-- not subscribed view -->
+      <div class="row">
+        <div class="col-sm-12 col-md-8 col-md-offset-2">
+          <% @response['articles'].each do |response| %>
+          <div class="thumbnail">
+            <div class="row">
+              <div class="col-md-4">
+                <% @image = response["urlToImage"] %>
+                <%= image_tag(@image, :class => "img-responsive") %>
+              </div>
+              <div class="col-sm-12 col-md-8">
+                <h5><%= response["title"] %></h5>
+                <p><%= response["description"] %></p>
+              </div>
+            </div> <!-- end of row -->
+          </div> <!-- thumbnail-->
+          <% end %>
+        </div>
       </div>
+      <% end %>   <!-- END OF  < ELSE > -->
     </div>
-    <% end %>   <!-- END OF  < ELSE > -->
-  </div>
