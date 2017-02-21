@@ -2,14 +2,14 @@
     <hr>
 
     <div class="">
-      Search for news from a source:
+      Search for news from a source: cnn, msnbc, buzzfeed, bloomberg, espn...
     </div>
 
     <div class="search">
       <!--  news search-->
         <%= form_tag("/news", method: "post") do %>
         <%= label_tag() %>
-        <%= text_field_tag(:source) %>
+        <%= text_field_tag(:source, 'techcrunch') %>
         <%= submit_tag("Search", class: "btn") %>
         <% end %>
     </div>
@@ -21,11 +21,11 @@
     <!--  signed in-->
     <% if (@response_arr) %>
     <div class="row">
-      <div class="col-sm-6 col-md-8 col-md-offset-2">
+      <div class="col-sm-12 col-md-8 col-md-offset-4">
         <% @response_arr.each do |response| %>
 
           <div class="hackfix row">
-            <div class="col-md-4">
+            <div class="col-sm-12 col-md-12">
               <!--  returne article headline and image-->
               <% @image = response['articles'][0]["urlToImage"] %>
               <%= image_tag(@image, :class => "img-responsive")%>
@@ -59,7 +59,7 @@
 
     <!-- not subscribed view -->
     <div class="row">
-      <div class="col-sm-6 col-md-8 col-md-offset-2">
+      <div class="col-sm-12 col-md-8 col-md-offset-2">
         <% @response['articles'].each do |response| %>
         <div class="thumbnail">
           <div class="row">
