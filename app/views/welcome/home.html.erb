@@ -2,7 +2,7 @@
     <hr>
 
     <div class="">
-      Search for news from a source: cnn, msnbc, buzzfeed, bloomberg, espn...
+      Search for news from a source: cnn, cnbc, buzzfeed, bloomberg, espn...
     </div>
 
     <div class="search">
@@ -21,7 +21,7 @@
     <!--  signed in-->
     <% if (@response_arr) %>
     <div class="row">
-      <div class="col-sm-12 col-md-8 col-md-offset-4">
+      <div class="col-sm-12 col-md-8 col-md-offset-2">
         <% @response_arr.each do |response| %>
 
           <div class="hackfix row">
@@ -30,13 +30,12 @@
               <% @image = response['articles'][0]["urlToImage"] %>
               <%= image_tag(@image, :class => "img-responsive")%>
             </div>
-            <div class="hotfix col-md-8">
+            <div class="hotfix col-md-12">
               <h5>  <%= response["source"] %> </h5>
               <!-- return first top 2 article -->
               <ul class="list-group">
                 <li class="list-group-item"><%= response['articles'][0]["title"] %></li>
                 <li class="list-group-item"><%= response['articles'][1]["title"] %></li>
-                <!-- <li class="list-group-item"><%= response['articles'][2]["title"] %></li> -->
               </ul>
             </div>
           </div> <!-- end of row -->

@@ -47,7 +47,7 @@ class WelcomeController < ApplicationController
 
 
      else # if someone not signed in
-       @response = HTTParty.get("http://www.newsapi.org/v1/articles?source=cnbc&apiKey=#{ENV['NEWS_API_KEY']}")
+       @response = HTTParty.get("http://www.newsapi.org/v1/articles?source=techcrunch&apiKey=#{ENV['NEWS_API_KEY']}")
        puts "RESPONSE", @response.inspect
      end
   end
