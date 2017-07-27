@@ -6,8 +6,7 @@ Github [Link](https://github.com/StefCharles22/scoop-app)
 
 Heroku [Link](https://scoop-app.herokuapp.com)
 
-Dummy Heroku login :demoapp  
-             Password: password
+Please refer to Github code due to API currently not responding. 
 
 About this app
 
