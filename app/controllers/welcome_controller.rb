@@ -33,7 +33,7 @@ class WelcomeController < ApplicationController
 
         @user_favorites.each do |favorite|
           puts "favorite.source:", favorite.source
-          @response = HTTParty.get("http://www.newsapi.org/v1/articles?source=#{favorite.source}&apiKey=#{ENV['NEWS_API_KEY']}")
+          @response = HTTParty.get("https://newsapi.org/v1/articles?source=#{favorite.source}&apiKey=#{ENV['NEWS_API_KEY']}")
           @response_arr.push(@response)
         end
 
@@ -47,8 +47,9 @@ class WelcomeController < ApplicationController
 
 
      else # if someone not signed in
-       @response = HTTParty.get("http://www.newsapi.org/v1/articles?source=techcrunch&apiKey=#{ENV['NEWS_API_KEY']}")
+       @response = HTTParty.get("https://newsapi.org/v1/articles?source=techcrunch&apiKey=#{ENV['NEWS_API_KEY']}")
        puts "RESPONSE", @response.inspect
+       puts "KEY", ENV['NEWS_API_KEY']
      end
   end
 
