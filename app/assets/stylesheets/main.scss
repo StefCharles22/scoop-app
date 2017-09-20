@@ -31,7 +31,6 @@ body {
     }
 
   header {
-
       position: fixed;
       width:100%;
       z-index: 1;
@@ -42,36 +41,34 @@ body {
       font-family: 'Libre Baskerville', serif;
       font-weight: bold;
 
+    .mdl-layout-title {
+      color: #74AFAD;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+      font-size: 30px;
+    }
 
+    .mdl-layout__header-row {
+      background-color: #404040;
+    }
 
-      .mdl-layout-title {
-        color: #74AFAD;
-        font-family: 'Libre Baskerville', serif;
-        font-weight: bold;
-        font-size: 30px;
-      }
+    nav .middle-navigation a {
+      color : #D9853B;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+    }
 
-      .mdl-layout__header-row {
-        background-color: #404040;
-      }
-      nav .middle-navigation a {
-        color : #D9853B;
-        font-family: 'Libre Baskerville', serif;
-        font-weight: bold;
-      }
-
-      .mdl-layout__drawer {
-        background-color: #ECECEA;
-      }
-
-  } //end of header
+    .mdl-layout__drawer {
+      background-color: #ECECEA;
+    }
+  }  //end of header
 
       // hamburger color
       div .mdl-layout__header .mdl-layout__drawer-button {
-      background-color: #D9853B;
+        background-color: #D9853B;
       }
 
-       .mdl-navigation {
+      .mdl-navigation {
         background-color: 255, 255, 255, .15;
       }
 
@@ -112,27 +109,27 @@ body {
         height: auto;
       }
 
-       a {
+      a {
         color: #D9853B;
         font-family: 'Playfair Display', serif;
         font-weight: bold;
-       }
-
+      }
 
       #chosen-faves img {
-        width: 80px;
+        width: 150px;
         height: auto;
       }
 
-
-
-    // user's favorite cards style
+      // user's favorite cards style
       .thumbnail {
         border-radius: 5px;
         h4  h5 {
           text-align: center;
           font-family: 'Libre Baskerville', serif;
-          }
+        }
+        h4 {
+          text-align: center;
+        }
       }
 
       // form styling for registration
@@ -145,90 +142,89 @@ body {
         margin-bottom: 100px;
         padding-bottom: 30px;
         padding-right: 60px;
+
         input {
           color: black;
         }
+
         h4 {
           font-size: 20px;
           color: #D9853B;
         }
       }  //end of logform
 
-    // sign up button styling
+      // sign up button styling
       #submit {
         padding-top: 8px;
         padding-bottom: 15px;
         color: #D9853B; //orange color
       }
 
-    //profile form
-    #settings {
-      margin-top: 150px;
-    }
+      //profile form
+      #settings {
+        margin-top: 150px;
+      }
 
+      li {
+        text-decoration: none;
+        list-style: none;
+      }
 
-    li {
-      text-decoration: none;
-      list-style: none;
-    }
+      div.card {
+        opacity: 80;
+        border-radius: 5px;
+      }
 
-    div.card {
-      opacity: 80;
-      border-radius: 5px;
-    }
-
-    div.card > li:hover {
-    }
+      div.card > li:hover {
+      }
 
       //  w3 school box shadow
       .card .thumbnail {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      margin: 2%;
-      margin-top: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 2%;
+        margin-top: 50px;
       }
 
       // styling logo and text w3 school
-    .thumbnail li {
-      margin: 0 10px;
-      border: none;
-      color: red;
-      padding: 10px;
-      // margin-left: 10px;
-      text-align: center;
-      font-size: 25px;
-      font-family: 'Libre Baskerville', serif;
+      .thumbnail li {
+        margin: 0 10px;
+        border: none;
+        color: red;
+        padding: 10px;
+        // margin-left: 10px;
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Libre Baskerville', serif;
+        margin-left: -30px;
 
-
-      img {
-        border-width:5px;
-        border-style:outset;
-        border-radius: 4px;
-        padding: 5px;
-        width: 150px;
+        img {
+          border-width:5px;
+          border-style:outset;
+          border-radius: 4px;
+          padding: 5px;
+          width: 150px;
         }
 
-      img:hover {
-        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        img:hover {
+          box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
       }
-    } //end of thumbnail
 
+      // edit favorite
+      .panel-default {
+        background-color: #3f4652;
+        img {
+          width: 200px;
+          height: 200px;
+          object-fit: cover
+        }
 
-    // edit favorite
-    .panel-default {
-      background-color: #3f4652;
-      img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover
+        .row {
+          color: #D9853B;
+        }
+
+        .row a:hover {
+          color: white;
+        }
       }
-      .row {
-        color: #D9853B;
-      }
-      .row a:hover {
-        color: white;
-      }
-    }
-
-
-
 } //end of body
