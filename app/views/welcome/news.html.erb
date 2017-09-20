@@ -1,47 +1,42 @@
-
-
-      <!--  news search-->
-
-
-      <center>
-        <div class="page-header feeds-header">
-          <hr>
-          <div class="">
-            Search for news from a source:
-          </div>
-          <div class="search">
-            <!--  news search-->
-              <%= form_tag("/news", method: "post") do %>
-              <%= label_tag() %>
-              <%= text_field_tag(:source) %>
-              <%= submit_tag("Search", class: "btn") %>
-              <% end %>
-          </div>
-          <hr>
-          <h1 class="text-warning"><%= @source %></h1>
-
-        </div>
-      </center>
-
-      <!--  default grid-->
-  <div class="row main ">
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-          <% @response['articles'].each do |response| %>
-            <div class="thumbnail">
-              <div class="row">
-                <div class="col-md-4">
-                  <% @image = response["urlToImage"] %>
-                  <%= image_tag(@image, :class => "img-responsive")%>
-                </div>
-                <div class="col-md-8">
-                  <h5><%= response["title"] %></h5>
-                  <p><%= response["description"] %></p>
-                </div>
-              </div> <!-- end of row -->
-            </div>
-          <% end %>
-        </div>
-      </div>
+<!--  news search-->
+<center>
+  <div class="page-header feeds-header">
+    <hr>
+    <div class="">
+      Search for news from a source:
     </div>
+    <div class="search">
+      <!--  news search-->
+      <%= form_tag("/news", method: "post") do %>
+      <%= label_tag() %>
+      <%= text_field_tag(:source) %>
+      <%= submit_tag("Search", class: "btn") %>
+      <% end %>
+    </div>
+    <hr>
+    <h1 class="text-warning"><%= @source %></h1>
+  </div>
+</center>
+
+<!--  default grid-->
+<div class="row main ">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <% @response['articles'].each do |response| %>
+      <div class="thumbnail">
+        <div class="row">
+          <div class="col-md-4">
+            <% @image = response["urlToImage"] %>
+            <%= image_tag(@image, :class => "img-responsive")%>
+          </div>
+          <div class="col-md-8">
+            <h5><%= response["title"] %></h5>
+            <p><%= response["description"] %></p>
+          </div>
+        </div> <!-- end of row -->
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

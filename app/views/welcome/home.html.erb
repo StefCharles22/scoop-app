@@ -1,21 +1,18 @@
-    <center><h2 class="serif-font">Latest News on SCOOP </h2>
-    <hr>
+<center><h2 class="serif-font">Latest News on SCOOP </h2>
+  <hr>
+<div class="">
+  Search for news from a source: cnn, cnbc, buzzfeed, bloomberg, espn...
+</div>
 
-    <div class="">
-      Search for news from a source: cnn, cnbc, buzzfeed, bloomberg, espn...
-    </div>
-
-    <div class="search">
-      <!--  news search-->
-        <%= form_tag("/news", method: "post") do %>
-        <%= label_tag() %>
-        <%= text_field_tag(:source, 'techcrunch') %>
-        <%= submit_tag("Search", class: "btn") %>
-        <% end %>
-    </div>
-
-    <hr>
-
+<div class="search">
+  <!--  news search-->
+  <%= form_tag("/news", method: "post") do %>
+  <%= label_tag() %>
+  <%= text_field_tag(:source, 'techcrunch') %>
+  <%= submit_tag("Search", class: "btn") %>
+  <% end %>
+</div>
+  <hr>
 
   <div class="row main">
     <!--  signed in-->
@@ -24,30 +21,28 @@
       <div class="col-sm-12 col-md-8 col-md-offset-2">
         <% @response_arr.each do |response| %>
 
-          <div class="hackfix row">
-            <div class="col-sm-12 col-md-12">
-              <!--  returne article headline and image-->
-              <% @image = response['articles'][0]["urlToImage"] %>
-              <%= image_tag(@image, :class => "img-responsive")%>
-            </div>
-            <div class="hotfix col-md-12">
-              <h5>  <%= response["source"] %> </h5>
-              <!-- return first top 2 article -->
-              <ul class="list-group">
-                <li class="list-group-item"><%= response['articles'][0]["title"] %></li>
-                <li class="list-group-item"><%= response['articles'][1]["title"] %></li>
-              </ul>
-            </div>
-          </div> <!-- end of row -->
-          <br><br>
-          <% end %>
-        </div>
-      </div> <!-- end of row -->
-
-
+        <div class="hackfix row">
+          <div class="col-sm-12 col-md-12">
+            <!--  returne article headline and image-->
+            <% @image = response['articles'][0]["urlToImage"] %>
+            <%= image_tag(@image, :class => "img-responsive")%>
+          </div>
+          <div class="hotfix col-md-12">
+            <h5>  <%= response["source"] %> </h5>
+            <!-- return first top 2 article -->
+            <ul class="list-group">
+              <li class="list-group-item"><%= response['articles'][0]["title"] %></li>
+              <li class="list-group-item"><%= response['articles'][1]["title"] %></li>
+            </ul>
+          </div>
+        </div> <!-- end of row -->
+        <br><br>
+        <% end %>
+      </div>
+    </div> <!-- end of row -->
       <hr>
-      <% else %>
 
+      <% else %>
       <!--  default grid-->
 
       <!-- not subscribed view -->
@@ -70,4 +65,4 @@
         </div>
       </div>
       <% end %>   <!-- END OF  < ELSE > -->
-    </div>
+  </div>
